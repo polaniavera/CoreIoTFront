@@ -1,0 +1,62 @@
+<div ba-panel ba-panel-title="Gestion Conductores">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="inputName">Nombre</label>
+        <input type="text" class="form-control" id="inputName" placeholder="Nombre" ng-model="info.name">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="inputSurname">Apellido</label>
+        <input type="text" class="form-control" id="inputSurname" placeholder="Apellido" ng-model="info.surname">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="inputPhone">Telefono</label>
+        <input type="text" class="form-control" id="inputPhone" placeholder="Telefono" ng-model="info.phone">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="inputAddress">Direccion</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Direccion" ng-model="info.address">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="inputLicense">Licencia</label>
+        <input type="text" class="form-control" id="inputLicense" placeholder="Licencia" ng-model="info.license">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="inputClass">Clase Licencia</label>
+        <input type="text" class="form-control" id="inputClass" placeholder="Clase Licencia" ng-model="info.class">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6" ng-controller="DatepickerCtrl">
+      <div class="form-group">
+        <label>Fecha de expiracion <em>{{info.dt | date:'fullDate' }}</em></label>
+          <p class="input-group">
+            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="info.dt" is-open="opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
+            <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </p>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" ng-click="createDriver()">Crear</button>
+  <button type="cancel" class="btn btn-danger">Cancelar</button>
+
+</div>
